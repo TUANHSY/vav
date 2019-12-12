@@ -14,6 +14,8 @@ public class FileTest6 {
         File file = new File("dest.txt");
         String msg = FileUtils.readFileToString(file,"utf8");
         int j=0;
+        //将文件读取为字符串时 字符串中包含换行符，win中换行符占两个字节 \r\n ，linux下为一字节 \n ， mac下为一字节\r
+        //遍历输出msg
         String[] strings =msg.split("\r\n");
         int length =0;
         for (String s :strings){
@@ -21,6 +23,7 @@ public class FileTest6 {
             length=length+10;
         }
         System.out.println(length);
+        //查找A a
         for (int i=0;i<msg.length();i++){
             char c =msg.charAt(i);
             if (c =='\n'){
