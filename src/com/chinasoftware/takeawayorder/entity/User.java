@@ -6,7 +6,7 @@ package com.chinasoftware.takeawayorder.entity;
  */
 public class User {
     /**
-     * 用户id
+     * 用户手机号
      */
     private String userId;
 

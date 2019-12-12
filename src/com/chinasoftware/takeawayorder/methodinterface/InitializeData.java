@@ -1,4 +1,4 @@
-package com.chinasoftware.takeawayorder.method;
+package com.chinasoftware.takeawayorder.methodinterface;
 
 import com.chinasoftware.takeawayorder.entity.Food;
 import com.chinasoftware.takeawayorder.entity.Order;

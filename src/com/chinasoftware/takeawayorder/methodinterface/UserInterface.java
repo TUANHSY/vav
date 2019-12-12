@@ -1,4 +1,4 @@
-package com.chinasoftware.takeawayorder.method;
+package com.chinasoftware.takeawayorder.methodinterface;
 
 import com.chinasoftware.takeawayorder.entity.User;
 
@@ -30,9 +30,10 @@ public interface UserInterface {
 
     /**
      * 增加用户
+     * @param users 用户列表
      * @return 1：成功 -1：失败
      */
-    int addUser();
+    int addUser(ArrayList<User> users);
 
 
 }
