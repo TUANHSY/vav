@@ -1,9 +1,12 @@
 package com.chinasoftware.takeawayorder.entity;
 
+import lombok.Data;
+
 /**
  * @author: DX
  * @date: 2019/12/10 11:25
  */
+@Data
 public class User {
     /**
      * 用户手机号
@@ -31,64 +34,27 @@ public class User {
      */
     private String userLocation;
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserPswd() {
-        return userPswd;
-    }
-
-    public void setUserPswd(String userPswd) {
-        this.userPswd = userPswd;
-    }
-
-    public String getUserLocation() {
-        return userLocation;
-    }
-
-    public void setUserLocation(String userLocation) {
-        this.userLocation = userLocation;
-    }
-
-    public User() {
-    }
-
-    public String getUserType() {
-        return userType;
-    }
-
-    public void setUserType(String userType) {
-        this.userType = userType;
-    }
-
-
 
     /**
+     *构造用户 构造时判断用户类型是否合法 将不合法的类型置空
+     * 无法用构造器构造超级管理员 和其他未定义类型用户
      * @param userId userId
-     * @param userType userType
+     * @param userType userType  1：顾客 2：店家
      * @param userName userName
      * @param userPswd userPswd
      * @param userLocation userLocation
      */
-    public User(String userId, String userType, String userName, String userPswd, String userLocation) {
+    public User(String userId, String userType, String userName, String userPswd, String userLocation){
+        String customer   = "1";
+        String shopkeeper = "2";
         this.userId = userId;
-        this.userType = userType;
+        if (customer.equals(userType)||shopkeeper.equals(userType)){
+            this.userType = userType;
+        }else {
+            this.userType = null;
+        }
         this.userName = userName;
         this.userPswd = userPswd;
         this.userLocation = userLocation;
     }
-
 }
