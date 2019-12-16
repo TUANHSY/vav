@@ -1,0 +1,12 @@
+1.使用DatagramSocket 指定端口 创建发射端
+2.准备数据 转成字节数组
+3.封装成DatagramSocket 包裹
+4.发送包裹
+5.释放资源
+
+
+1.使用DatagramSocket 指定端口 创建发射端
+2.准备容器,封装成DatagramPacket 包裹
+3.阻塞式接受包裹
+4.分析数据
+5.释放资源
